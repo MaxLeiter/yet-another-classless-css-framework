@@ -6,13 +6,18 @@
     "dev": "cp -a css/ public/css/ && next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:lib":
   },
   "dependencies": {
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },
+  "main": "dist/framework.css",
+  "files": [
+    "dist/*.css"
+  ],
   "devDependencies": {
     "@types/node": "17.0.40",
     "@types/react": "18.0.12",
