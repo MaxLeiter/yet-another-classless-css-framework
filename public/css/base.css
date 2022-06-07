@@ -1,0 +1,146 @@
+:root {
+  /* Spacing */
+  --gap-quarter: 0.25rem;
+  --gap-half: 0.5rem;
+  --gap: 1rem;
+  --gap-double: 2rem;
+  --small-gap: 4rem;
+  --big-gap: 4rem;
+  --main-content: 48rem;
+  --radius: 8px;
+  --inline-radius: 5px;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue",
+    sans-serif;
+  --font-mono: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo",
+    monospace;
+
+  /* Sizes */
+  --header-height: 4rem;
+
+  /* Transitions */
+  --transition: 0.1s ease-in-out;
+  --transition-slow: 0.3s ease-in-out;
+
+  /* Dark Mode Colors */
+  --bg: hsl(0, 0%, 7%);
+  --fg: #fafbfc;
+  --gray: #999;
+  --light-gray: #444;
+  --lighter-gray: #222;
+  --lightest-gray: #1a1a1a;
+  --header-bg: var(--lightest-gray);
+  --article-color: #eaeaea;
+  --gray-alpha: rgba(255, 255, 255, 0.5);
+  --selection: rgba(255, 255, 255, 0.88);
+  --link: #579dff;
+
+  /* Syntax Highlighting */
+  --token: #999;
+  --comment: #999;
+  --keyword: #fff;
+  --name: #fff;
+  --highlight: #2e2e2e;
+
+  /* Fading */
+  --timing: 0.3s;
+  --fade-in: var(--timing) ease-in-out;
+}
+
+/* if prefers light mode */
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --gray: rgb(100, 100, 100);
+    --light-gray: rgb(222, 222, 222);
+    --lighter-gray: rgb(240, 240, 240);
+    --lightest-gray: rgb(245, 245, 245);
+    --article-color: #212121;
+    --gray-alpha: rgba(19, 20, 21, 0.5);
+    --selection: rgba(0, 0, 0, 0.99);
+    --link: #3f72ba;
+
+    --token: #666;
+    --comment: #999;
+    --keyword: #000;
+    --name: #333;
+    --highlight: #eaeaea;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  text-shadow: none;
+  background: var(--selection);
+  color: var(--bg);
+}
+
+html {
+  line-height: 1.5;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: calc(1.02rem);
+  background: var(--bg);
+  color: var(--fg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: var(--main-content);
+  margin: 0 auto;
+  padding: var(--gap-half) var(--gap);
+}
+
+pre,
+code {
+  font-family: var(--font-mono);
+}
+
+code {
+  display: inline-block;
+}
+
+article {
+  max-width: var(--main-content);
+  margin: var(--gap) auto;
+  line-height: 1.9;
+  padding: var(--gap-half);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius);
+}
+
+p,
+li {
+  letter-spacing: -0.33px;
+}
+
+p {
+  margin: var(--gap) 0;
+  padding: 0;
+}
+
+kbd {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 2px 7px;
+  font-weight: 600;
+  background: var(--lighter-gray);
+  border-radius: 5px;
+}

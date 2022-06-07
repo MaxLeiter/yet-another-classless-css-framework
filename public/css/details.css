@@ -1,0 +1,31 @@
+
+summary {
+  cursor: pointer;
+  outline: none;
+}
+
+details {
+  border-radius: var(--radius);
+  background: var(--lightest-gray);
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+summary::after {
+  content: " (click to open)";
+}
+
+details[open] summary {
+  margin-bottom: var(--gap-half);
+  padding: 0;
+}
+
+details > * {
+  font-size: 1rem;
+}
+
+@media (hover: none) {
+  summary::after {
+    content: "(tap to open)";
+  }
+}

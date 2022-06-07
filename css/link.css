@@ -1,0 +1,33 @@
+a {
+  color: var(--link);
+}
+
+a[href]:hover {
+  color: var(--darker-gray);
+}
+
+a[href]:focus-visible {
+  outline: 1px dotted var(--link);
+}
+
+a[href]:active {
+  color: var(--gray);
+}
+
+a[href^="#"] > *:hover::after {
+    content: " #";
+    color: var(--gray);
+}
+
+a[href^="#"] {
+    color: var(--fg);
+    border-bottom: none;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 960px) {
+  a[href^="#"] > *::after {
+    content: " #";
+    color: var(--light-gray);
+  }
+}

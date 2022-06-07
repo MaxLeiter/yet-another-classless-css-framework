@@ -1,0 +1,16 @@
+aside,
+blockquote {
+  background: var(--lightest-gray);
+  padding: var(--gap-half) var(--gap);
+  color: var(--article-color);
+  margin: var(--gap-half) 0;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 3px solid var(--light-gray);
+}
+
+aside {
+    border: 2px solid var(--lighter-gray);
+}

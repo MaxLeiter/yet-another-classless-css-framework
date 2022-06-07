@@ -1,0 +1,20 @@
+header {
+    font-family: var(--font-sans);
+    width: 100%;
+    background-color: var(--header-bg);
+    padding: var(--gap-half);
+    border-radius: var(--radius);
+}
+
+header h1,
+header h2,
+header h3,
+header h4,
+header h5,
+header h6 {
+    font-weight: 600;
+    line-height: 1.75;
+    padding: 0;
+    margin: var(--gap) 0;
+}
+

@@ -1,0 +1,13 @@
+footer {
+    width: 100%;
+    background-color: var(--header-bg);
+    padding: var(--gap-half);
+    border-radius: var(--radius);
+    color: var(--article-color);
+    text-align: center;
+}
+
+.footer a {
+    color: var(--link);
+    transition: color 0.1s ease-in-out;
+}
