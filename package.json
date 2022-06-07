@@ -1,30 +1,41 @@
 {
-  "name": "yet-another-css-framework",
+  "name": "yet-another-classless-css-framework",
+  "description": "A responsive and classless CSS framework",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "cp -a css/ public/css/ && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build:lib":
+    "build:dist": "cat css/*.css > dist/framework.css && css-minify -f dist/framework.css -o dist"
   },
-  "dependencies": {
-    "next": "12.1.6",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
-  },
-  "main": "dist/framework.css",
   "files": [
-    "dist/*.css"
+    "dist/framework.css",
+    "dist/framework.min.css"
   ],
+  "license": "MIT",
+  "author": {
+    "name": "Max Leiter",
+    "email": "maxwell.leiter@gmail.com"
+  },
+  "keywords": [
+    "css",
+    "framework",
+    "responsive",
+    "classless"
+  ],
+  "homepage": "https://github.com/maxleiter/yet-another-classless-css-framework",
   "devDependencies": {
     "@types/node": "17.0.40",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
+    "css-minify": "^2.0.0",
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6",
     "globby": "^13.1.1",
-    "typescript": "4.7.3"
+    "typescript": "4.7.3",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
   }
 }

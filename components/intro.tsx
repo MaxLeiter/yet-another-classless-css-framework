@@ -7,7 +7,9 @@ const Intro = () => <>
     <p>
         You can find on the source on <a href="https://github.com/MaxLeiter/yet-another-classless-css-framework/" rel="noopener noreferrer" target="_blank">GitHub</a>.
     </p>
-
+    <p>
+        You can get started with <code>yarn add yet-another-classless-css-framework</code> or find the minified CSS file <a href="https://github.com/MaxLeiter/yet-another-classless-css-framework/tree/main/dist" rel="noopener noreferrer" target="_blank">here</a>.
+    </p>
     <a href="#features"><h2 id="features">Features</h2></a>
     <ul>
         <li>Embraces semantic html</li>

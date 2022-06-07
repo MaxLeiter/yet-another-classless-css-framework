@@ -28,6 +28,6 @@ a[href^="#"] {
 @media screen and (max-width: 960px) {
   a[href^="#"] > *::after {
     content: " #";
-    color: var(--gray);
+    color: var(--light-gray);
   }
 }

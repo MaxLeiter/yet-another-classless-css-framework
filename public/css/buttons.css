@@ -15,6 +15,10 @@ button {
   max-width: 100%;
 }
 
+button + button {
+  margin-left: var(--gap-half);
+}
+
 button:hover,
 button:focus {
   color: var(--gray);

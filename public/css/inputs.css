@@ -76,6 +76,7 @@ input[type="checkbox"]:focus {
 
 input[type="file"] {
     border: none;
+    padding: 0;
 }
 
 input[type="color"] {
@@ -85,7 +86,6 @@ input[type="color"] {
 }
 
 input[type="range"] {
-
     height: 1rem;
     padding: 0;
 }
@@ -104,3 +104,4 @@ input[type="range"]:focus {
        width: auto;
     }
 }
+
