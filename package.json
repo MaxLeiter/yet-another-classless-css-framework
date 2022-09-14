@@ -3,7 +3,7 @@
   "description": "A responsive and classless CSS framework",
   "version": "0.1.0",
   "scripts": {
-    "dev": "cp -a css/ public/css/ && next dev",
+    "dev": "rm -rf public/css && cp -a css/ public/css/ && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

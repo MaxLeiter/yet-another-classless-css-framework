@@ -15,7 +15,7 @@ const Intro = () => <>
         <li>Embraces semantic html</li>
         <li>Responsive</li>
         <li>Uses CSS variables</li>
-        <li>Advanced features via CSS attributes</li>
+        <li>Makes use of advanced and new CSS features</li>
         <ul>
             <li>For example, hover over a heading element below.</li>
         </ul>

@@ -1,17 +1,23 @@
-import ExampleDetails from '@/components/examples/example-details'
-import ExampleWrapper from '@/components/examples/example-wrapper'
-import Footer from '@/components/footer'
-import Header from '@/components/header'
-import Intro from '@/components/intro'
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
+import ExampleDetails from "@/components/examples/example-details";
+import ExampleWrapper from "@/components/examples/example-wrapper";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
+import Intro from "@/components/intro";
+import Nav from "@/components/nav";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 
-const Home: NextPage = ({ styles }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home: NextPage = ({
+  styles,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
+      <Nav />
       <Header />
       <Intro />
       <main>
-        <a href="#showcase"><h2 id="showcase">Showcase</h2></a>
+        <a href="#showcase">
+          <h2 id="showcase">Showcase</h2>
+        </a>
         <ExampleDetails name="base" styleString={styles["css/base.css"]} />
 
         <ExampleWrapper name="headings" styleStrings={styles}>
@@ -49,8 +55,7 @@ const Home: NextPage = ({ styles }: InferGetStaticPropsType<typeof getStaticProp
           <blockquote>This is a blockquote.</blockquote>
         </ExampleWrapper>
 
-        <ExampleWrapper name="details" styleStrings={styles}>
-        </ExampleWrapper>
+        <ExampleWrapper name="details" styleStrings={styles}><></></ExampleWrapper>
 
         <ExampleWrapper name="buttons" styleStrings={styles}>
           <button>Example</button>
@@ -91,9 +96,16 @@ const Home: NextPage = ({ styles }: InferGetStaticPropsType<typeof getStaticProp
         </ExampleWrapper>
         <ExampleWrapper name="header" styleStrings={styles}>
           <header>
-            This is a header. It assumes the width of it&apos;s container, which is why
-            it&apos;s small here. You should also probably have an &lt;h1&gt; inside
-            it, like at the top of this page.
+            This is a header. It assumes the width of it&apos;s container, which
+            is why it&apos;s small here. You should also probably have an
+            &lt;h1&gt; inside it, like at the top of this page.
+          </header>
+        </ExampleWrapper>
+        <ExampleWrapper name="nav" styleStrings={styles}>
+          <Nav />
+          <header>
+            <h2>Nav in a header</h2>
+            <Nav />
           </header>
         </ExampleWrapper>
         <ExampleWrapper name="footer" styleStrings={styles}>
@@ -104,8 +116,11 @@ const Home: NextPage = ({ styles }: InferGetStaticPropsType<typeof getStaticProp
           <aside>This is an aside.</aside>
         </ExampleWrapper>
         <ExampleWrapper name="link" styleStrings={styles}>
-          <a href="https://github.com/maxleiter">A link</a>
-          <a href="#link"><h4>A link to an anchor containing a heading</h4></a>
+          <a href="https://github.com/maxleiter">A link</a> <br/>
+          <a href="https://github.com/maxleiter" data-transition>A link with `data-transition`</a>
+          <a href="#link">
+            <h4>A link to an anchor containing a heading</h4>
+          </a>
         </ExampleWrapper>
         <ExampleWrapper name="inputs" styleStrings={styles}>
           <label htmlFor="textInput">
@@ -118,8 +133,8 @@ const Home: NextPage = ({ styles }: InferGetStaticPropsType<typeof getStaticProp
           <input type="time" placeholder="Time input" />
           <input type="color" placeholder="Color input" />
           <input type="range" placeholder="Range input" />
-          <label htmlFor="checkbox"
-          >Checkbox:
+          <label htmlFor="checkbox">
+            Checkbox:
             <input type="checkbox" id="checkbox" />
           </label>
 
@@ -150,35 +165,35 @@ const Home: NextPage = ({ styles }: InferGetStaticPropsType<typeof getStaticProp
             </ul>
           </ul>
 
-          <ul><li>
-            <a href="">A link</a>
-          </li></ul>
-
+          <ul>
+            <li>
+              <a href="">A link</a>
+            </li>
+          </ul>
         </ExampleWrapper>
-
       </main>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export const getStaticProps: GetStaticProps = async () => {
-  const styles: Record<string, string> = {}
+  const styles: Record<string, string> = {};
 
   const { globby } = await import("globby");
   const fs = await import("fs/promises");
-  const files = await globby(["css/**/*.css"])
+  const files = await globby(["css/**/*.css"]);
 
   for (const file of files) {
-    const content = await fs.readFile(file, "utf8")
-    styles[file] = content
+    const content = await fs.readFile(file, "utf8");
+    styles[file] = content;
   }
 
   return {
     props: {
       styles,
     },
-  }
-}
+  };
+};
 
-export default Home
+export default Home;

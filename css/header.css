@@ -4,6 +4,7 @@ header {
     background-color: var(--header-bg);
     padding: var(--gap-half);
     border-radius: var(--radius);
+    display: flex;
 }
 
 header h1,
@@ -18,3 +19,9 @@ header h6 {
     margin: var(--gap) 0;
 }
 
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+}

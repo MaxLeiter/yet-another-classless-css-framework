@@ -213,6 +213,17 @@ a.reset {
     text-shadow: none !important;
   }
 }
+
+.visually-hidden:not(:focus):not(:active) {
+  border-width: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
 button {
   user-select: none;
   cursor: pointer;
@@ -307,6 +318,7 @@ header {
     background-color: var(--header-bg);
     padding: var(--gap-half);
     border-radius: var(--radius);
+    display: flex;
 }
 
 header h1,
@@ -321,6 +333,12 @@ header h6 {
     margin: var(--gap) 0;
 }
 
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+}
 h1,
 h2,
 h3,
@@ -532,6 +550,62 @@ article ol > li > ul {
   list-style-type: circle;
 }
 
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 0 var(--gap-half);
+}
+
+*[data-transition] {
+    transition: var(--transition);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--gray);
+    border-bottom: 1px solid var(--gray);
+}
+
+nav ul li a:hover {
+    border-bottom: 1px solid var(--fg);
+    color: var(--fg);
+}
+
+nav ul li:first-child {
+    padding-left: 0;
+}
+
+header:has(nav) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    header:has(nav) {
+        flex-direction: column;
+    }
+
+    header:has(nav) h1,
+    header:has(nav) h2,
+    header:has(nav) h3 {
+        margin: 0;
+        padding: 0;
+    }
+}
 table {
   border-collapse: collapse;
   width: 100%;
